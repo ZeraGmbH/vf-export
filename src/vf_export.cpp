@@ -46,7 +46,7 @@ void vf_export::setVeinEntity(VfCpp::veinmoduleentity *value)
 QVariant vf_export::RPC_Convert(QVariantMap p_params)
 {
     zPyInt::PythonGuard guard;
-    bool retVal = false;
+    uint retVal = 0;
 
     m_inputPath=p_params["p_inputPath"].toString();
     m_outputPath=p_params["p_outputPath"].toString();
@@ -68,11 +68,11 @@ QVariant vf_export::RPC_Convert(QVariantMap p_params)
         zPyInt::PySharedRef good =py->callFunction("checkInputFile",{});
         if(PyObject_IsTrue(good.data())){
             zPyInt::PySharedRef ret=py->callFunction("convert",{});
-            if(PyObject_IsTrue(ret.data())){
-                retVal=true;
-            }
+            retVal=(uint) PyLong_AsLong(ret.data());
         }
 
+    }else{
+        retVal = 1;
     }
 
     return retVal;
