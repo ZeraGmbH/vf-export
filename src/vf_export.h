@@ -2,9 +2,8 @@
 #define VF_EXPORT_H
 
 #include <QObject>
-#include <veinmoduleentity.h>
-#include <veincompproxy.h>
-
+#include <vf-cpp-entity.h>
+#include <vf-cpp-compproxy.h>
 
 namespace zPyInt {
 class PythonBinding;
