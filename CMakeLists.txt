@@ -114,7 +114,7 @@ include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     VfExportConfigVersion.cmake
     VERSION ${PACKAGE_VERSION}
-    COMPATIBILITY SameMinorVersion
+    COMPATIBILITY SameMajorVersion
     )
 
 # configure *Config.cmake
