@@ -17,7 +17,6 @@ include(CMakePackageConfigHelpers)
 
 find_package(Qt5 REQUIRED COMPONENTS Core CONFIG)
 find_package(VeinFramework REQUIRED)
-find_package(VfCpp REQUIRED)
 find_package(PythonLibs 3.8 REQUIRED)
 find_package(PythonScriptingInterface)
 
@@ -48,7 +47,7 @@ target_link_libraries(VfExport
     Zera::VfEvent
     Zera::VfComponent
     Zera::VfStorageHash
-    VeinMeta::VfCpp
+    Zera::VfCpp
     VeinMeta::PythonScriptingInterface
     )
 
