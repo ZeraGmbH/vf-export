@@ -55,11 +55,11 @@ public:
      *
      * Take the return value and add it to the top EventHandler system
      */
-    VfCpp::veinmoduleentity *getVeinEntity() const;
-    void setVeinEntity(VfCpp::veinmoduleentity *value);
+    VfCpp::VfCppEntity *getVeinEntity() const;
+    void setVeinEntity(VfCpp::VfCppEntity *value);
 
 private:
-    VfCpp::veinmoduleentity *m_entity;
+    VfCpp::VfCppEntity *m_entity;
     bool m_isInitalized;
 
     zPyInt::PythonBinding *py;
