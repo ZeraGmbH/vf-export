@@ -14,7 +14,7 @@ using namespace vfExport;
 vf_export::vf_export(QObject *parent, int id) : QObject(parent),
     m_isInitalized(false)
 {
-    m_entity=new VfCpp::veinmoduleentity(id);
+    m_entity=new VfCpp::VfCppEntity(id);
 }
 
 bool vf_export::initOnce()
@@ -33,12 +33,12 @@ bool vf_export::initOnce()
     return true;
 }
 
-VfCpp::veinmoduleentity *vf_export::getVeinEntity() const
+VfCpp::VfCppEntity *vf_export::getVeinEntity() const
 {
     return m_entity;
 }
 
-void vf_export::setVeinEntity(VfCpp::veinmoduleentity *value)
+void vf_export::setVeinEntity(VfCpp::VfCppEntity *value)
 {
     m_entity = value;
 }
