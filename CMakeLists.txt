@@ -43,7 +43,6 @@ target_link_libraries(VfExport
     PUBLIC
     Qt5::Core
     ${PYTHON_LIBRARIES}
-    Zera::VfHelpers
     Zera::VfEvent
     Zera::VfComponent
     Zera::VfStorageHash
