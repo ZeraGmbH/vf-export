@@ -45,7 +45,7 @@ target_link_libraries(VfExport
     ${PYTHON_LIBRARIES}
     Zera::VfEvent
     Zera::VfComponent
-    Zera::VfStorageHash
+    Zera::VfStorage
     Zera::VfCpp
     VeinMeta::PythonScriptingInterface
     )
