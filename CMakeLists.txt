@@ -15,7 +15,10 @@ include(GNUInstallDirs)
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
 
-find_package(Qt5 REQUIRED COMPONENTS Core CONFIG)
+set(QT_MAJOR_VER "5" CACHE STRING "Qt major version")
+set(QTX "Qt${QT_MAJOR_VER}")
+
+find_package(${QTX} REQUIRED COMPONENTS Core CONFIG)
 find_package(VeinFramework REQUIRED)
 find_package(PythonLibs 3.8 REQUIRED)
 find_package(PythonScriptingInterface)
@@ -41,7 +44,7 @@ add_library(VfExport SHARED
 
 target_link_libraries(VfExport 
     PUBLIC
-    Qt5::Core
+    ${QTX}::Core
     ${PYTHON_LIBRARIES}
     Zera::VfEvent
     Zera::VfComponent

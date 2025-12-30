@@ -1,6 +1,5 @@
 include(CMakeFindDependencyMacro)
 
-find_dependency(Qt5 REQUIRED COMPONENTS Core CONFIG)
 find_dependency(VeinFramework REQUIRED)
 find_dependency(PythonLibs 3.8 REQUIRED)
 find_dependency(PythonScriptingInterface)
