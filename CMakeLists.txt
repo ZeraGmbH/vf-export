@@ -23,6 +23,9 @@ find_package(VeinFramework REQUIRED)
 find_package(PythonLibs 3.8 REQUIRED)
 find_package(PythonScriptingInterface)
 
+set(PYTHON_CONVERTER_SOURCES "" CACHE FILEPATH "python-converter source path - for debug")
+add_definitions(-DPYTHON_CONVERTER_SOURCES="${PYTHON_CONVERTER_SOURCES}")
+
 file(GLOB SOURCES
 ${PROJECT_SOURCE_DIR}/src/*.cpp
     )

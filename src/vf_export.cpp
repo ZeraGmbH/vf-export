@@ -26,9 +26,8 @@ bool vf_export::initOnce()
         m_status=m_entity->createComponent("Status",false,true);
         m_entity->createRpc(this,"RPC_Convert", VfCpp::cVeinModuleRpc::Param({{"p_session", "QString"},{"p_inputPath", "QString"},{"p_outputPath", "QString"},{"p_engine", "QString"},{"p_filter" , "QString"},{"p_parameters", "QString"}}));
         py =  new zPyInt::PythonBinding();
-        if(py->init("pythonconverter_pkg.CppInterface") == true){
+        if(py->init("pythonconverter_pkg.CppInterface", PYTHON_CONVERTER_SOURCES) == true)
             m_status=true;
-        }
     }
     return true;
 }
