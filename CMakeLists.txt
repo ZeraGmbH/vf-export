@@ -20,7 +20,7 @@ set(QTX "Qt${QT_MAJOR_VER}")
 
 find_package(${QTX} REQUIRED COMPONENTS Core CONFIG)
 find_package(VeinFramework REQUIRED)
-find_package(PythonLibs 3.8 REQUIRED)
+find_package(Python3 COMPONENTS Development REQUIRED)
 find_package(PythonScriptingInterface)
 
 set(PYTHON_CONVERTER_SOURCES "" CACHE FILEPATH "python-converter source path - for debug")
@@ -35,7 +35,7 @@ ${PROJECT_SOURCE_DIR}/src/*.h
     )
 
 include_directories(
-    ${PYTHON_INCLUDE_DIRS}
+    ${Python3_INCLUDE_DIRS}
     )
 
 list(REMOVE_ITEM SOURCES "${PROJECT_SOURCE_DIR}/vl_postgresdatabase.cpp")
@@ -48,7 +48,7 @@ add_library(VfExport SHARED
 target_link_libraries(VfExport 
     PUBLIC
     ${QTX}::Core
-    ${PYTHON_LIBRARIES}
+    ${Python3_LIBRARIES}
     Zera::VfEvent
     Zera::VfComponent
     Zera::VfStorage

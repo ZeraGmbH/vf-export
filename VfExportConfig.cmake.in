@@ -1,7 +1,7 @@
 include(CMakeFindDependencyMacro)
 
 find_dependency(VeinFramework REQUIRED)
-find_dependency(PythonLibs 3.8 REQUIRED)
+find_dependency(Python3 COMPONENTS Development REQUIRED)
 find_dependency(PythonScriptingInterface)
 
 include("${CMAKE_CURRENT_LIST_DIR}/VfExportTargets.cmake")
